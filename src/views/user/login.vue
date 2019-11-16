@@ -89,7 +89,7 @@ export default {
       // 校验成功,登录
       try {
         const data = await login(this.loginForm)
-        // console.log(this.setUser(data))
+        console.log(data)
         // 1- 登录成功,进行提示
         this.$toast({ type: 'success', message: '登录成功' })
         // 2- 保存token
@@ -98,6 +98,7 @@ export default {
         const url = this.$route.query.redirect || '/user'
         this.$router.push(url)
       } catch (e) {
+        console.log(e)
         // 4- 进行错误提示
         this.$toast({ type: 'fail', message: '登录失败' })
       }

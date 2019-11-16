@@ -1,7 +1,7 @@
 const AUTH_KEY = 'hm-toutiao-m-80-user'
 // 获取
 export const getUser = () => {
-  return JSON.parse(window.localStorage.getItem(AUTH_KEY || '{}'))
+  return JSON.parse(window.localStorage.getItem(AUTH_KEY) || '{}')
 }
 // 设置user是一个对象
 export const setUser = (user) => {

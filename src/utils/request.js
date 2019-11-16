@@ -20,10 +20,12 @@ instance.interceptors.request.use(config => {
     config.headers.Authorization = `Bearer ${store.state.user.token}`
   }
   return config
-}, err => Promise.reject(err))
+}, err => {
+  return Promise.reject(err)
+})
 // 响应拦截(成功,无用数据 失败,重新刷新token)
 instance.interceptors.response.use(res => {
-  console.log(res)
+  // console.log(res)
   try {
     return res.data.data
   } catch (e) {
